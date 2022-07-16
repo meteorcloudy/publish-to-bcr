@@ -1,0 +1,28 @@
+{
+  "name": "publish-to-bcr",
+  "private": true,
+  "type": "module",
+  "main": "./application/cloudfunction/index.js",
+  "scripts": {
+    "prebuild": "node tools/clean-dist-files.js",
+    "build": "tsc && node tools/copy-dist-files.js"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.1.2",
+    "@google-cloud/secret-manager": "^4.0.0",
+    "@octokit/auth-app": "^4.0.4",
+    "@octokit/core": "^4.0.4",
+    "@octokit/rest": "^19.0.3",
+    "@octokit/webhooks": "^10.0.8",
+    "@octokit/webhooks-methods": "^3.0.0",
+    "@octokit/webhooks-types": "^6.2.4",
+    "gcp-metadata": "^5.0.0",
+    "simple-git": "^3.10.0",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/source-map-support": "^0.5.4",
+    "globby": "^13.1.2",
+    "typescript": "^4.7.4"
+  }
+}
